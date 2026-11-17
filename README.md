@@ -38,6 +38,27 @@ Open http://127.0.0.1:8000/
 - Zakat calculations are educational estimates, not a personal fatwa. Nisab and asset eligibility can vary by scholarly opinion and date.
 - Before deployment, set a secure secret key, DEBUG=False, configure ALLOWED_HOSTS, HTTPS, database backups and production static files.
 
+## Screenshots
+
+<img width="1798" height="840" alt="6" src="https://github.com/user-attachments/assets/417f521e-da50-4ff8-a109-afb0fc29229e" />
+
+<img width="1772" height="902" alt="88" src="https://github.com/user-attachments/assets/499a7c81-979f-41f2-b370-f85858a32ab1" />
+
+<img width="1781" height="897" alt="111" src="https://github.com/user-attachments/assets/9a9f0353-7875-4af9-872b-65a538c5022f" />
+
+<img width="1770" height="870" alt="dfdf" src="https://github.com/user-attachments/assets/c00087a2-5181-490f-a5ff-6e0ed14b54f3" />
+
+<img width="1730" height="873" alt="7" src="https://github.com/user-attachments/assets/0b4bad2e-6d79-4d22-8363-b59c9b942cf7" />
+
+<img width="1723" height="877" alt="11" src="https://github.com/user-attachments/assets/ecdcb766-0def-4023-bdf9-bc7baf6d2084" />
+
+
+
+
+
+
+
+
 ## Architecture
 - `config/`: project settings and root URLs
 - `apps/`: independent Django applications
