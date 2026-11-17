@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}أسماء الله الحسنى{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">ولله الأسماء الحسنى</span><h1>أسماء الله الحسنى</h1><p>تأمل أسماء الله ومعانيها.</p></div><div class="quran-mark">الله</div></div>
+<div class="names-grid">{% for number,item in names %}<div class="name-card"><span>{{ number }}</span><strong>{{ item.0 }}</strong><small>{{ item.1 }}</small></div>{% endfor %}</div>
+<p class="muted-note">هذه قائمة أولية؛ راجع ترتيب الأسماء ومعانيها ومصادرها الشرعية قبل النشر.</p>
+{% endblock %}

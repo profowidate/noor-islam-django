@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="auth-wrap"><div class="auth-card"><span class="eyebrow">أهلاً بك في نور الإسلام</span><h1>{% block form_title %}{% endblock %}</h1>
+<form method="post">{% csrf_token %}{{ form.as_p }}<button class="btn btn-primary btn-full" type="submit">{% block form_button %}{% endblock %}</button></form>
+{% block form_extra %}{% endblock %}</div></div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}لوحة التحكم{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">مساحتك اليومية</span><h1>مرحباً بك في نور الإسلام</h1><p>نسأل الله أن يجعل يومك مليئاً بالخير والبركة.</p></div><div class="date-chip">{{ today|date:"l، j F Y" }}</div></div>
+<div class="dashboard-grid">
+  <section class="panel daily-panel"><span class="eyebrow">ورد اليوم</span><h2>وَرَتِّلِ الْقُرْآنَ تَرْتِيلًا</h2><p>اجعل لك نصيباً يومياً من تلاوة كتاب الله.</p><a class="btn btn-primary" href="{% url 'quran' %}">متابعة القراءة</a></section>
+  <section class="panel prayer-panel"><span class="eyebrow">مواقيت الصلاة</span><h2>حافظ على صلاتك</h2><p>اعرف مواقيت الصلاة في مدينتك.</p><a class="btn btn-outline" href="{% url 'prayer_times' %}">عرض المواقيت</a></section>
+</div>
+<section class="section-head"><div><span class="eyebrow">خدمات نور</span><h2>ماذا تريد أن تفعل اليوم؟</h2></div></section>
+<div class="feature-grid compact">
+<a class="feature-card" href="{% url 'azkar' %}"><span class="feature-icon">✧</span><h3>الأذكار اليومية</h3><p>ابدأ يومك بذكر الله</p></a>
+<a class="feature-card" href="{% url 'tasbeeh' %}"><span class="feature-icon">◉</span><h3>السبحة</h3><p>سبّح واستغفر</p></a>
+<a class="feature-card" href="{% url 'zakat' %}"><span class="feature-icon">٪</span><h3>الزكاة</h3><p>احسب زكاتك</p></a>
+<a class="feature-card" href="{% url 'duas' %}"><span class="feature-icon">❋</span><h3>الأدعية</h3><p>أدعية من السنة</p></a>
+</div>
+{% endblock %}

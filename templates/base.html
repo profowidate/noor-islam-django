@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#123d32">
+  <title>{% block title %}نور الإسلام{% endblock %} | منصة نور الإسلام</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{% url 'home' %}"><span class="brand-mark">ن</span><span>نور الإسلام<small>رفيقك إلى الطمأنينة</small></span></a>
+  <nav class="main-nav">
+    <a href="{% url 'dashboard' %}">الرئيسية</a>
+    <a href="{% url 'quran' %}">القرآن</a>
+    <a href="{% url 'prayer_times' %}">مواقيت الصلاة</a>
+    <a href="{% url 'azkar' %}">الأذكار</a>
+  </nav>
+  <div class="nav-actions">
+    {% if user.is_authenticated %}
+      <span class="welcome">مرحباً {{ user.username }}</span>
+      <form method="post" action="{% url 'logout' %}">{% csrf_token %}<button class="btn btn-outline" type="submit">خروج</button></form>
+    {% else %}
+      <a class="btn btn-outline" href="{% url 'login' %}">دخول</a>
+      <a class="btn btn-primary" href="{% url 'register' %}">إنشاء حساب</a>
+    {% endif %}
+  </div>
+</header>
+<main class="container">
+  {% if messages %}{% for message in messages %}<div class="notice">{{ message }}</div>{% endfor %}{% endif %}
+  {% block content %}{% endblock %}
+</main>
+<footer class="footer"><div class="brand"><span class="brand-mark">ن</span><span>نور الإسلام</span></div><p>منصة تجمع لك ما يعينك على يومٍ عامر بالذكر والعبادة.</p><small>© {% now "Y" %} Noor Islam</small></footer>
+<script src="{% static 'js/app.js' %}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

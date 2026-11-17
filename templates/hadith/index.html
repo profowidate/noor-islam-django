@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}الحديث الشريف{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">من هدي النبي ﷺ</span><h1>الحديث الشريف</h1><p>أحاديث مختارة مع الإشارة إلى مصادرها.</p></div></div>
+<div class="azkar-list">{% for title,text,source in hadiths %}<article class="zikr-card"><h3>{{ title }}</h3><p class="zikr-text">{{ text }}</p><small class="muted-note">{{ source }}</small></article>{% endfor %}</div>
+<p class="muted-note">هذه عينة أولية وليست مكتبة حديث كاملة. يجب التحقق من النصوص والتخريج قبل اعتمادها.</p>
+{% endblock %}

@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}الأذكار{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">ألا بذكر الله تطمئن القلوب</span><h1>{{ title }}</h1><p>اختر الذكر وكرره بهدوء وحضور قلب.</p></div><div class="quran-mark">✧</div></div>
+<div class="tabs">{% for key,label in categories.items %}<a class="{% if key == category %}active{% endif %}" href="?category={{ key }}">{{ label }}</a>{% endfor %}</div>
+<div class="azkar-list">{% for item in items %}<article class="zikr-card"><p class="zikr-text">{{ item.text }}</p><div class="zikr-footer"><small>المصدر: {{ item.source }} · التكرار: {{ item.count }}</small><button class="counter-button" data-count="{{ item.count }}" aria-label="عداد الذكر"><span class="count">{{ item.count }}</span><small>اضغط للتكرار</small></button></div></article>{% endfor %}</div>
+<p class="muted-note">يرجى مراجعة النصوص والتخريج من مصادر موثوقة قبل اعتماد المحتوى للنشر.</p>
+{% endblock %}

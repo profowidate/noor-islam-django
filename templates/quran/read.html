@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}سورة {{ surah.1 }}{% endblock %}
+{% block content %}
+<div class="reader-heading"><a class="text-link" href="{% url 'quran' %}">← فهرس السور</a><span class="eyebrow">القرآن الكريم</span><h1>سورة {{ surah.1 }}</h1><p>{{ surah.2 }} · {{ surah.3 }} آية</p></div>
+{% if error %}<div class="notice">{{ error }}</div>{% endif %}
+{% if ayahs %}<article class="ayah-panel"><div class="basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div><div class="ayah-text">{% for ayah in ayahs %}<span>{{ ayah.text }} <span class="ayah-end">۞{{ ayah.numberInSurah }}</span></span>{% endfor %}</div></article>{% endif %}
+{% endblock %}

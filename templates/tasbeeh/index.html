@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}السبحة الإلكترونية{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">اذكر الله في كل وقت</span><h1>السبحة الإلكترونية</h1><p>اختر ذكراً وابدأ التسبيح.</p></div></div>
+<div class="tasbeeh-box"><select id="dhikr"><option>سبحان الله</option><option>الحمد لله</option><option>الله أكبر</option><option>أستغفر الله</option><option>لا إله إلا الله</option><option>اللهم صل وسلم على نبينا محمد</option></select><div class="tasbeeh-count" id="tasbeehCount">0</div><p>عدد التسبيحات</p><button class="tasbeeh-tap" id="tasbeehTap">تسبيح</button><button class="btn btn-outline" id="tasbeehReset">إعادة ضبط</button></div>
+{% endblock %}

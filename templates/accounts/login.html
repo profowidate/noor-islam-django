@@ -1,0 +1,5 @@
+{% extends "accounts/form_base.html" %}
+{% block title %}تسجيل الدخول{% endblock %}
+{% block form_title %}تسجيل الدخول{% endblock %}
+{% block form_button %}دخول{% endblock %}
+{% block form_extra %}<p class="form-foot">ليس لديك حساب؟ <a href="{% url 'register' %}">أنشئ حساباً</a></p>{% endblock %}

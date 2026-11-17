@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block title %}حاسبة الزكاة{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">زكاة المال</span><h1>حاسبة الزكاة</h1><p>أدخل قيمة الأموال والأصول الزكوية لحساب تقدير مبدئي بنسبة ٢.٥٪.</p></div><div class="quran-mark">٪</div></div>
+<div class="calculator panel"><label for="assets">إجمالي الأموال والأصول الزكوية (بالعملة المحلية)</label><input id="assets" type="number" min="0" step="0.01" placeholder="مثال: 100000"><label for="debts">الديون الحالّة المستحقة (إن وجدت)</label><input id="debts" type="number" min="0" step="0.01" placeholder="مثال: 5000"><label for="nisab">قيمة النصاب التي تعتمدها (اختياري)</label><input id="nisab" type="number" min="0" step="0.01" placeholder="أدخل قيمة النصاب بعملتك"><button class="btn btn-primary" id="calculateZakat">احسب الزكاة</button><div class="result-box" id="zakatResult">ستظهر نتيجة الحساب هنا.</div><p class="muted-note">هذه أداة تقديرية تعليمية وليست فتوى. تختلف تفاصيل الوعاء والنصاب والحول بحسب نوع المال والأحكام الشرعية؛ استشر جهة علمية موثوقة.</p></div>
+{% endblock %}

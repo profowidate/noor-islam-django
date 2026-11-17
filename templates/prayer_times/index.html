@@ -1,0 +1,9 @@
+{% extends "base.html" %}{% load prayer_tags %}
+{% block title %}مواقيت الصلاة{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">الصلاة نور</span><h1>مواقيت الصلاة</h1><p>تابع مواقيت الصلاة حسب المدينة وطريقة الحساب.</p></div><div class="quran-mark">☾</div></div>
+<form class="search-form" method="get"><input name="city" value="{{ city }}" placeholder="المدينة"><input name="country" value="{{ country }}" placeholder="الدولة"><button class="btn btn-primary">عرض المواقيت</button></form>
+{% if date %}<p class="muted-note">التاريخ: {{ date }} · {{ city }}, {{ country }}</p>{% endif %}
+{% if error %}<div class="notice">{{ error }}</div>{% endif %}
+{% if timings %}<div class="prayer-grid">{% for key,label in prayer_names %}<div class="prayer-card {% if key == 'Fajr' %}highlight{% endif %}"><span>{{ label }}</span><strong>{{ timings|get_item:key|default:"—" }}</strong></div>{% endfor %}</div>{% endif %}
+{% endblock %}

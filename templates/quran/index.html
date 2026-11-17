@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block title %}القرآن الكريم{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">كلام الله تعالى</span><h1>القرآن الكريم</h1><p>تصفح سور القرآن الكريم واقرأ آياته.</p></div><div class="quran-mark">﷽</div></div>
+<form class="search-form" method="get"><input type="search" name="q" value="{{ query }}" placeholder="ابحث باسم السورة أو رقمها..."><button class="btn btn-primary">بحث</button></form>
+<div class="surah-grid">{% for s in surahs %}<a class="surah-card" href="{% url 'read_surah' s.0 %}"><span class="surah-number">{{ s.0 }}</span><span class="surah-name"><strong>{{ s.1 }}</strong><small>{{ s.2 }}</small></span><span class="surah-ayahs">{{ s.3 }} آية</span></a>{% empty %}<p>لا توجد نتائج مطابقة.</p>{% endfor %}</div>
+<p class="muted-note">يتم تحميل نص الآيات كاملاً من خدمة AlQuran Cloud عند فتح السورة، ويتطلب ذلك اتصالاً بالإنترنت.</p>
+{% endblock %}

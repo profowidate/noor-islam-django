@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}الأدعية{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">الدعاء عبادة</span><h1>أدعية مختارة</h1><p>مجموعة أولية من الأدعية مع التوسع لاحقاً في التصنيفات والمصادر.</p></div></div>
+<div class="azkar-list">{% for title,text in duas %}<article class="zikr-card"><h3>{{ title }}</h3><p class="zikr-text">{{ text }}</p></article>{% endfor %}</div>
+<p class="muted-note">تحقق من صحة النصوص ومصادرها قبل النشر العام.</p>
+{% endblock %}

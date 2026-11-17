@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block title %}التقويم الهجري{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">التقويم الإسلامي</span><h1>التاريخ الهجري</h1><p>التاريخ الميلادي اليوم: {{ today|date:"j F Y" }}</p></div><div class="quran-mark">☾</div></div>
+{% if hijri %}<div class="panel calendar-panel"><span class="eyebrow">التاريخ الهجري</span><strong>{{ hijri.day }} {{ hijri.month.ar }} {{ hijri.year }} هـ</strong><p>{{ hijri.weekday.ar }}</p></div>{% elif error %}<div class="notice">{{ error }}</div>{% endif %}
+<p class="muted-note">قد يختلف التاريخ الهجري يوماً بحسب الرؤية المحلية وطريقة التقويم المعتمدة.</p>
+{% endblock %}
